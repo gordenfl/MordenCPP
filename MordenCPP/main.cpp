@@ -5,9 +5,9 @@
 #include"StructuredBind.h"
 #include"Lambda.h"
 #include "StringView.h"
-
-
-#include <iostream>
+#include"UniqPoint.h"
+//Reading <<<CPP Core Guidelines>>
+#include"CPPCoreGuidelines.h"
 
 int main()
 {
@@ -20,6 +20,10 @@ int main()
     Lambda_Test();
 
     StringView_Test();
+
+    Cpp_Core_Test();
+
+    Unique_Point_Test();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
