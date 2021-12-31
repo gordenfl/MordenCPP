@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/MordenCPP/MordenCPP/x64/Debug
+/MordenCPP/.vs/MordenCPP/v17
+/MordenCPP/x64/Debug
