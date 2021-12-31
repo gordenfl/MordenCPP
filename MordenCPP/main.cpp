@@ -3,6 +3,9 @@
 #include"InitializerList.h"
 #include"AutoKeyword.h"
 #include"StructuredBind.h"
+#include"Lambda.h"
+#include "StringView.h"
+
 
 #include <iostream>
 
@@ -13,6 +16,10 @@ int main()
     AutoKeyword_Test();
 
     StructuredBind_Test();
+
+    Lambda_Test();
+
+    StringView_Test();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
