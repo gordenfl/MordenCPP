@@ -1,11 +1,6 @@
 // MordenCPP.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-#include"InitializerList.h"
-#include"AutoKeyword.h"
-#include"StructuredBind.h"
-#include"Lambda.h"
-#include "StringView.h"
-#include"UniqPoint.h"
+#include"Features.h"
 //Reading <<<CPP Core Guidelines>>
 #include"CPPCoreGuidelines.h"
 
@@ -21,9 +16,11 @@ int main()
 
     StringView_Test();
 
-    Cpp_Core_Test();
-
     Unique_Point_Test();
+
+    Span_Test();
+
+    Cpp_Core_Test();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -1,4 +1,3 @@
-#include"StructuredBind.h"
 
 #include<utility>
 #include<vector>
@@ -43,6 +42,7 @@ void afterBindRangeMap() {
 	}
 }
 void StructuredBind_Test() {
+	std::cout << "|| Structure Binding learning" << std::endl;
 	beforeBind();
 	afterBind();
 	afterBindRangeVeter();

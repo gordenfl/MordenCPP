@@ -1,5 +1,4 @@
-#include"Lambda.h"
-
+#include"Features.h"
 #include<iostream>
 #include<utility>
 #include<vector>
@@ -15,8 +14,9 @@ void beforeLambda() {
 	std::sort(begin(data), end(data), compare);
 
 	for (auto d : data) {
-		std::cout << d.first << ":" << d.second << std::endl;
+		std::cout << d.first << ":" << d.second << ", ";
 	}
+	std::cout << std::endl;
 	return;
 }
 
@@ -27,8 +27,9 @@ void afterLambda() {
 	);
 
 	for (auto d : data) {
-		std::cout << d.first << ":" << d.second << std::endl;
+		std::cout << d.first << ":" << d.second << ", ";
 	}
+	std::cout << std::endl;
 }
 
 void lambda_argument_byvalue() {
@@ -66,6 +67,7 @@ void lambda_define_func_in_func() {
 	return;
 }
 void Lambda_Test() {
+	std::cout << "|| Lambda learning" << std::endl;
 	beforeLambda();
 	afterLambda();
 

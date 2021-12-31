@@ -1,4 +1,4 @@
-#include"AutoKeyword.h"
+#include"Features.h"
 
 #include<iostream>
 #include<string>
@@ -46,7 +46,6 @@ void TestType() {
 }
 
 void AutoKeyword_Test() {
+	std::cout << "|| Auto key words learning" << std::endl;
 	TestType();
-
-	
 }

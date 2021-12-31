@@ -1,4 +1,4 @@
-#include"StringView.h"
+
 #include<string>
 #include<iostream>
 
@@ -22,6 +22,7 @@ void string_view_after() {
 }
 
 void StringView_Test() {
+	std::cout << "|| String view learning" << std::endl;
 	string_before();
 	string_view_after();  //string_view is read-only
 }

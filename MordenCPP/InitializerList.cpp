@@ -1,4 +1,4 @@
-#include"InitializerList.h"
+#include"Features.h"
 
 #include<vector>
 #include<iostream>
@@ -136,6 +136,7 @@ void TestReturn() {
 }
 
 void InitializerList_Test() {
+	std::cout << "|| Initializer List learning" << std::endl;
 	OldVectorInit();
 	NewVectorInit();
 
