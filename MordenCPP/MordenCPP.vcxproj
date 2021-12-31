@@ -141,18 +141,21 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AutoKeyword.cpp" />
+    <ClCompile Include="CPPCoreGuidelines.cpp" />
     <ClCompile Include="InitializerList.cpp" />
     <ClCompile Include="Lambda.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Span.cpp" />
     <ClCompile Include="StringView.cpp" />
     <ClCompile Include="StructedBinding.cpp" />
+    <ClCompile Include="UniqPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AutoKeyword.h" />
-    <ClInclude Include="InitializerList.h" />
-    <ClInclude Include="Lambda.h" />
-    <ClInclude Include="StringView.h" />
-    <ClInclude Include="StructuredBind.h" />
+    <ClInclude Include="CPPCoreGuidelines.h" />
+    <ClInclude Include="Features.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Readme.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

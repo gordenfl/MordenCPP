@@ -16,6 +16,7 @@ Month Date::month() const {
 	return _month;
 }
 
+//for_each 在 algorithm 头文件里， 这个例子带一个lambda
 void ExampleForEach() {
 	std::vector<int> data{ 1,2,3,4,5,6,7,8,9 };
 	for_each(begin(data), end(data), [](int v) {
@@ -34,23 +35,17 @@ void Find(vector<string>& data, string & target) {
 	}
 }
 
-void SpanTest(span<int> data) {
-	for_each(begin(data), end(data), [](int v) {cout << v << endl; });
-}
 
-void Span() {
-	int a[]{ 1,2,3,4,5,6,7,8,9 };
-	SpanTest(a);
-}
 
 void Cpp_Core_Test() {
+	cout << "||For: for_each learning" << endl;
 	ExampleForEach();
 
+	cout << "||For: find learning" << endl;
 	auto data = vector<string>{ "AAA", "BBB", "CCC", "DDD", "target"};
 	auto target = string("BBB");
 	Find(data, target);
 
-	Span();
-
+	
 
 }

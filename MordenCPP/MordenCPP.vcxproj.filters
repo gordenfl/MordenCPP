@@ -33,22 +33,25 @@
     <ClCompile Include="StringView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CPPCoreGuidelines.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UniqPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Span.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="InitializerList.h">
+    <ClInclude Include="CPPCoreGuidelines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AutoKeyword.h">
+    <ClInclude Include="Features.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StructuredBind.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Lambda.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StringView.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Readme.txt" />
   </ItemGroup>
 </Project>
