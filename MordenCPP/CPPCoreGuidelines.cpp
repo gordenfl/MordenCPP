@@ -5,6 +5,7 @@
 #include<vector>
 #include<string>
 #include<span>
+#include<chrono>
 
 using std::vector;
 using std::string;
@@ -16,7 +17,7 @@ Month Date::month() const {
 	return _month;
 }
 
-//for_each ÔÚ algorithm Í·ÎÄ¼þÀï£¬ Õâ¸öÀý×Ó´øÒ»¸ölambda
+//for_each ï¿½ï¿½ algorithm Í·ï¿½Ä¼ï¿½ï¿½ï£¬ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½Ò»ï¿½ï¿½lambda
 void ExampleForEach() {
 	std::vector<int> data{ 1,2,3,4,5,6,7,8,9 };
 	for_each(begin(data), end(data), [](int v) {
@@ -34,15 +35,21 @@ void Find(vector<string>& data, string & target) {
 		std::cout << "Don't find target:" << target << std::endl;
 	}
 }
-
-
+template<class rep, class period>
+void blinked(std::chrono::duration<rep, period> delta) {
+	auto milliseconds_to_blink = duration_cast<milliseconds>(delta);
+	std::cout<< "second:"<< milliseconds_to_blink <<std::endl;
+}
+void ArgsWithType() {
+	blinked(12s);
+}
 
 void Cpp_Core_Test() {
 	cout << "||For: for_each learning" << endl;
 	ExampleForEach();
 
 	cout << "||For: find learning" << endl;
-	auto data = vector<string>{ "AAA", "BBB", "CCC", "DDD", "target"};
+	auto data = std::vector<std::string>{ "AAA", "BBB", "CCC", "DDD", "target"};
 	auto target = string("BBB");
 	Find(data, target);
 
