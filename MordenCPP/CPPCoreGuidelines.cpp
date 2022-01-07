@@ -5,6 +5,7 @@
 #include<vector>
 #include<string>
 #include<span>
+#include<chrono>
 
 using std::vector;
 using std::string;
@@ -16,7 +17,7 @@ Month Date::month() const {
 	return _month;
 }
 
-//for_each ÔÚ algorithm Í·ÎÄ¼þÀï£¬ Õâ¸öÀý×Ó´øÒ»¸ölambda
+//for_each ï¿½ï¿½ algorithm Í·ï¿½Ä¼ï¿½ï¿½ï£¬ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½Ò»ï¿½ï¿½lambda
 void ExampleForEach() {
 	std::vector<int> data{ 1,2,3,4,5,6,7,8,9 };
 	for_each(begin(data), end(data), [](int v) {
@@ -35,33 +36,32 @@ void Find(vector<string>& data, string & target) {
 	}
 }
 
-
 void Cpp_Core_Test() {
 	cout << "||For: for_each learning" << endl;
 	ExampleForEach();
 
 	cout << "||For: find learning" << endl;
-	auto data = vector<string>{ "AAA", "BBB", "CCC", "DDD", "target"};
+	auto data = std::vector<std::string>{ "AAA", "BBB", "CCC", "DDD", "target"};
 	auto target = string("BBB");
 	Find(data, target);
 
 
 	// not_null,  code from:https://github.com/microsoft/GSL/blob/main/include/gsl/pointers
-	//¶Ô¿ÕÖ¸Õë±£»¤£¬×Ô¼º¶¨Òå¸önot_nullµÄÄ£°åÀà£¬¶ÔÕâÑù¸ü¼ÓÓÑºÃ
+	//ï¿½Ô¿ï¿½Ö¸ï¿½ë±£ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½not_nullï¿½ï¿½Ä£ï¿½ï¿½ï¿½à£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñºï¿½
 
 
 	//Do not pass an array as a single pointer
-	//ÕâÀï×îºÃÓÃspan Ä£°å½«Êý×é°ü×°Ò»´Î£¬ÕâÑù¿ÉÒÔ±£Ö¤²»»áÔ½½ç·ÃÎÊ£¬ÕâÑù»á°²È«£¬²¢ÇÒ»á¼õÉÙÒ»¸ö±íÊ¾´óÐ¡µÄ²ÎÊý
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½span Ä£ï¿½å½«ï¿½ï¿½ï¿½ï¿½ï¿½×°Ò»ï¿½Î£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ï¿½Ê£ï¿½ï¿½ï¿½ï¿½ï¿½á°²È«ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ð¡ï¿½Ä²ï¿½ï¿½ï¿½
 
 
-	//±ÜÃâ¸´ÔÓµÄ³õÊ¼»¯£¬±ÈÈçÐèÒª´«Ä³¸ö²ÎÊý²ÅÄÜ³õÊ¼»¯µÄÀà£¬¸Ä³É¼òµ¥³õÊ¼»¯£¬½«Ä³¸ö²ÎÊýÔÚ¶ÔÏó³õÊ¼»¯ÒÔºóµ÷ÓÃÄ³¸öº¯Êý³õÊ¼»¯½øÈ¥
+	//ï¿½ï¿½ï¿½â¸´ï¿½ÓµÄ³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½à£¬ï¿½Ä³É¼òµ¥³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½È¥
 	// file1.cpp
 	// extern const X x;
 	//const Y y = fun(x);
 	// file2.cpp
 	// extern const Y y;
 	// const X x = func(y);
-	//ÕâÀï»á³öÏÖËÀÑ­»·±à¼­´íÎó
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½à¼­ï¿½ï¿½ï¿½ï¿½
 	/*
 	file1.cpp
 	extern const X;
@@ -75,22 +75,22 @@ void Cpp_Core_Test() {
 	*/
 
 
-	//¾¡Á¿¼õÉÙº¯Êý²ÎÊýµÄ¸öÊý£¬ÓÃ¸÷ÖÖ·½·¨£º
-	//ÓÃstruct class °ü×°£¬Àà¶ÔÏóµÄ³ÉÔ±±äÁ¿ÉèÖÃµÈµÈ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ùºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½
+	//ï¿½ï¿½struct class ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä³ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÃµÈµï¿½
 
-	//±ÜÃâÏàÁÚµÄ²ÎÊý±»µ±³É²»Í¬º¬ÒåµÄ²ÎÊýÊ¹ÓÃ
-	//Àý×Ó:  void copy_n(T* p, T* q, int n); //copy from p to q, copy length is n. this is bad
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÚµÄ²ï¿½ï¿½ï¿½É²ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½
+	//ï¿½ï¿½ï¿½ï¿½:  void copy_n(T* p, T* q, int n); //copy from p to q, copy length is n. this is bad
 	// void copy_n(const T* p, T* q, int n); //const of p, then p will not be used as target point
 	// void copy_n(span<const T> p, span<T> q);  // this is good
 
 
-	//³éÏóÀà¾¡Á¿Ö»¶¨Òå½Ó¿Ú£¬²»Òª°üº¬Êý¾Ý£¬³ÉÔ±±äÁ¿µÈµÈ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½à¾¡ï¿½Ö»ï¿½ï¿½ï¿½ï¿½Ó¿Ú£ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½Èµï¿½
 
 
-	//Èç¹ûÐèÒª½»²æ±àÒë£¨ÔÚÒ»¸öÆ½Ì¨ÉÏ±àÒëÔÚÁíÍâÒ»¸öÆ½Ì¨ÉÏÔËÐÐµÄ³ÌÐò£©£¬×îºÃÓÃC-Style ×Ó¼¯
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¨ï¿½ï¿½Ò»ï¿½ï¿½Æ½Ì¨ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Æ½Ì¨ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ³ï¿½ï¿½ò£©£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½C-Style ï¿½Ó¼ï¿½
 
 
-	//Èç¹û³öÓÚÌØÊâÔ­ÒòÐèÒªÓÃµ½Ò»Ð©±È½Ï³óÂªµÄ´úÂëºÍ²»°²È«µÄ´úÂë£¬Çë½«´úÂë±£ÁôÔÚÄÚ²¿£¬²»Òª¸ÐÈ¾½Ó¿Ú
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½Òªï¿½Ãµï¿½Ò»Ð©ï¿½È½Ï³ï¿½Âªï¿½Ä´ï¿½ï¿½ï¿½Í²ï¿½ï¿½ï¿½È«ï¿½Ä´ï¿½ï¿½ë£¬ï¿½ë½«ï¿½ï¿½ï¿½ë±£ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½È¾ï¿½Ó¿ï¿½
 
 
 }
