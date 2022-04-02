@@ -1,16 +1,20 @@
 
-#include<iostream>
-#include<span>
-#include<algorithm>
+#include <iostream>
+#include <span>
+#include <algorithm>
 
-//¾ÍÊÇÒ»¸ö´ø³¤¶ÈµÄÊı×é
-void Span_worker(std::span<int> data) {
-	for_each(begin(data), end(data), [](int v) {std::cout << v << " "; });
+using std::span;
+//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Èµï¿½ï¿½ï¿½ï¿½ï¿½
+void Span_worker(std::span<int> data)
+{
+	for_each(begin(data), end(data), [](int v)
+			 { std::cout << v << " "; });
 	std::cout << std::endl;
 }
 
-void Span_Test() {
+void Span_Test()
+{
 	std::cout << "||For: span learning" << std::endl;
-	int data[]{ 1,2,3,4,5,6,7,8,9 ,10,11,12 };
+	int data[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 	Span_worker(data);
 }
